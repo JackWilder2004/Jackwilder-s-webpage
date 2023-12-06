@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>Jack Wilder's webpage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+
+.nav span:hover,a:hover{
+    
+  transform: scale(1.2);
+  transition: all 0.5s ;
+}
+
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            cursor: none;           
+        }
+
+ul{
+  list-style-type: none; /*清除无序列表前的小点*/
+  width: auto;
+  height: 50px;
+  background: #3b3753;
+  margin: 0px;
+  padding-left: 20%;/*左边距，使li看起来在中间*/
+  /*position: relative;*/
+  text-align: center;
+}
+li{
+  float: left;
+  width: 130px;
+  height: 100%;
+  padding: 0px;
+  margin-right: 1%;  /*两个li之间的距离*/
+}
+a:link,a:visited{ /*鼠标未点击和点击过时的样式*/
+  display: block;
+  color: #FFFFFF;
+  background-color: #3b3753;
+  text-align: center;
+  line-height: 30px; /*li行高*/
+  padding: 10px;
+  text-decoration: none; /*去下划线*/
+}
+a:hover{ /*鼠标移动到点击位时的样式，active指点击过后的样式*/
+  background-color: #111;
+}
+
+   .carousel-item>img{
+    max-height: 350px;
+}
+  body {
+    background-image: url("https://tse3-mm.cn.bing.net/th/id/OIP-C.NIdKTQjSK_XngdzOAVcdDwHaKe?pid=ImgDet&rs=1");
+    background-size: cover;
+  }
+  header{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size:x-large
+  }
+  footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: x-large;
+  }
+  h1,h2{
+    font-size: 40px;
+  }
+  p{
+    font-size: 25px;
+  }
+  table, th, td {
+  border: 2px solid black;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #6495ED;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  padding: 10px;
+  position: relative;
+  background-color: #F0F8FF;
+  border: 1px solid #6495ED;
+  margin: 10px 0;
+  clear: both;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #6495ED;
+  border: 3px solid #F0F8FF;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-item .date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline-item .content {
+  margin-left: 30px;
+}
+
+.mouse{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;;
+        position: fixed;
+        left: -200px;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
+</style>
+</head>
+<body>
+
+  <script>
+    var strname="Welcome!";
+    var strlen=strname.length;
+    var dstr="";
+    var ssize=1300;
+    function fdiv(){
+      for (i=0;i<strlen;++i){
+        dstr=dstr+'<div id=aa'+i+' style="font-size:20px; top:200px; left:'+ssize+'px; position:absolute;">'+strname.charAt(i)+'</div>';
+      ssize=ssize+22;
+      }
+      document.write(dstr);
+    }
+    fdiv();
+    var sumstr=new Array(-1,-6,-10,-15,-10,-6,-1);
+    var sublen=sumstr.length;
+    var i=1;
+    function dmove(){
+      var s="";
+      if (i!=1){Parray(i);}
+      Larray(i);
+      ++i;
+      if (i==strlen) i=0;
+      setTimeout("dmove()",100);
+    }
+    function Parray(n){
+      for (i1=1;i1<n;++i1){
+        ob=document.all("aa"+(i1));
+      ob.style.top=200+"px";
+      }
+    }
+    function Larray(n){
+      for (i2=0;i2<sublen;++i2){
+        if ((n+i2)<strlen){
+        ob=document.all("aa"+(n+i2));
+          ob.style.top=((200+sumstr[i2])+"px");
+      }
+      }
+    }
+    dmove();
+    </script>
+
+  <header>
+    JackWilder
+  </header>
+
+
+  <img class="mouse" src="icon.png" alt="">
+<script>  var mouse = document.querySelector('.mouse');
+  window.addEventListener('mousemove',function(event){    
+      mouse.style.left = event.clientX - mouse.offsetWidth/2 + 'px' ;
+      mouse.style.top = event.clientY -mouse.offsetHeight/2 + 'px';       
+  })
+</script>
+
+
+  <div class="box">
+    <div class="nav1">
+          <ul>  
+              <li><a href="https://www.fulan.com.cn/"> Internship </a></li>
+              <li><a href="blog.html"> Blog </a></li>
+              <li><a href="comment.html"><span style="color:rgb(155, 72, 72);">Provide comments</span></a></li>
+          </ul>
+      </div>
+    </div>
+
+    <h1 style="color: rgb(0, 0, 0);">ALL OF THIS ABOUT JackWilder</h1>
+
+    <table style="width: 78%">
+      <tr>
+        <th>English name</th>
+        <th>Chinese name</th>
+        <th>Student Number</th>
+        <th>Group number</th>
+      </tr>
+      <tr>
+        <td>JackWilder</td>
+        <td>YanXinpeng</td>
+        <td>222222066</td>
+        <td>R</td>
+      </tr>
+    </table><br/>
+
+      <div class="spinner-border text-muted"></div>
+      <div class="spinner-border text-primary"></div>
+      <div class="spinner-border text-success"></div>
+      <div class="spinner-border text-info"></div>
+      <div class="spinner-border text-warning"></div>
+      <div class="spinner-border text-danger"></div>
+      <div class="spinner-border text-secondary"></div>
+      <div class="spinner-border text-dark"></div>
+      <div class="spinner-border text-light"></div>
+    </div>
+
+<h2>Time and tide wait for no man</h2>
+<p id="demo"></p>
+<p>
+  <audio controls="controls" loop="loop">
+    <source src="As Long As You Love Me-Justin Bieber,Big Sean.128.mp3" type="audio/mp3"></source>
+  </audio>
+</p>
+
+     <div class="content">
+      <div class="container mt-3">
+        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          click it!
+        </button>
+      </div>
+      
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">JackWilder's webpage</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              Enjoying now!
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div></div>
+        </div></div>
+
+<h2>Studying NEVER STOP</h2>
+<p>Now, I am studying JavaScript for like two weeks, I think it is a little difficult although it is very similar to Java. <br/>
+  I studyed Java last summer holiday to do some internships in a company, but I am not very good at it.<br/>
+  I studyed html code and css last month, I think I might have gotten started, and I often use this kind of codes<br/> 
+   to write some websites.<br/>
+  I really like using bootstrap, it is a very useful tool. <br/>
+  Like now,I use codes to do my self-intreduction. I am very happy to do it.<br/>
+  Also, I spent three months getting started with python two months ago. <br/>
+  I firmly believe that I will make the most of what I have learned to complete the knowledge in the future.<br/>
+</p>
+<script>
+    const d = new Date();
+    document.getElementById("demo").innerHTML = d;
+</script>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="date">(2022.9~2025.6)Undergraduate study experience in China</div>
+    <div class="content">Three years study in Wuxi Taihu University in China.<br/>
+        The view is very beautiful with lots of trees and hills. <br/>
+        Also, there are some cute squirrels, kittens, puppies and other &nbsp kinds &nbsp of &nbsp animals.</div>
+        <img src="http://www.wxu.edu.cn/r/cms/thxy/thxy2/images/78building.jpg" height="130" width="550">
+  </div>
+  <div class="timeline-item">
+    <div class="date">(2025.9~2026.9)Undergraduate study experience in UK</div>
+    <div class="content"> One year study in University of the West of Scotland in UK.<br/>
+        I hope the fish and chips over there will be memorable, and the whiskey &nbsp over there will make me intoxicated.</div>
+        <img src="https://www.uws.ac.uk/media/5962/banner1.jpg?anchor=center&mode=crop&width=830&height=585&rnd=132321104370000000&quality=80" height="130" width="550">
+  </div>
+  <div class="timeline-item">
+    <div class="date">(2023.6~2023.9)Internship experience</div>
+    <div class="content">Internship in Shanghai Fairyland Software Co.,Ltd. in China. 
+        Mainly study &nbsp &nbsp and use Java, MySQL to do some primary project to practice.<br/>
+        <a href="https://www.fulan.com.cn/">Shanghai Fairyla &nbsp nd Software Co.,Ltd.</a>"Click on it and you will be taken to the website of my internship compa &nbsp&nbsp ny"</div>
+        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ig2sGCsMvVnNcqj6xSEc9gAAAA?w=156&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" height="100" width="100">
+  </div>
+  <div class="timeline-item">
+    <div class="date">Major subjects</div>
+    <div class="content"> Subiects in China: Computing Systems,Inroduction to Web Development &nbsp&nbsp&nbsp, Introduction to Programming, Project Management, Projected Management, Python for Network Engineers</br>
+        Subjects in UK: Network Security, Advanced Digital Forensic Analysis, Sec&nbspure Programming, Mechine Learning for Data Analytics. </div>
+  </div>
+  <div class="timeline-item">
+    <div class="date">Interests about JackWilder</div>
+    <div class="content">I like playing skateboard, magic, and being a social butterfly talking with &nbsp native speakers in English.<br/>
+        I am very good at Magic, mainly about close-up magic, I like using &nbspplay&nbsp&nbsp&nbsp&nbsp&nbsping card to realize different magic effects, and making people think it is real magic. <br/>
+        I like to use different techniques and ways to change the playing cards, p&nbsperform some coin tricks or combine my own style to play casually.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="date">JackWilder's blog</div>
+    <div class="content"><a href="blog.html" title="BLOG " target="top">Enjoying my blog about some &nbsp&nbsp videos if you like.(Just click the link.)</a></div>
+  </div>
+  <div class="timeline-item">
+    <div class="date">English skills</div>
+    <div class="content">
+        1.I am really into chatting with native speakers in English and I have lots &nbsp&nbsp of friends from all over the world.<br/>
+        2.IELTS 7<br/>
+        3.pass CET-4, CET-6
+  </div>
+    </div>
+</div>
+  <!-- Carousel -->
+<div id="demox" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demox" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demox" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demox" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.pHDsK_jKwBYrdtvfhRArqgHaEK?w=292&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="1" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.65cNLro3lDsRuuvQnOFm5gHaE8?w=214&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="2" class="d-block" style="width:100%">
+    </div>
+    <div class="carousel-item">
+      <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.vf9PnRdfP38giHj60c9_RAHaE8?w=266&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="3" class="d-block" style="width:100%">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demox" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demox" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<footer>Thank you for watching</footer>
+</body>
+</html>
